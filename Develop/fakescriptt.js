@@ -16,7 +16,7 @@ var special = ["!,@,#,$,%,^,&,*,(,),_,+"];
 
 //Prompt that confirms user is inside the parameters
 function generatePassword() {
-    confirmLength=(prompt("You must chose between 8 and 128 characters");
+    confirmLength=(prompt("You must chose between 8 and 128 characters"));
     //Loop if password length is outside of parameters
     if (isNaN(confirmLength) || confirmLength <8 || confirmLength > 128) {
       alert ("Please enter a valid password length between 8 and 128 characters.");
@@ -72,7 +72,7 @@ function generatePassword() {
            console.log(randomPassword)
          }
         // return randomPassword;
-        return hello;
+        return 'hello';
 
 
         }
