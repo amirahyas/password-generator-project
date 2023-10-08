@@ -1,9 +1,9 @@
 var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-var confirmlength = "";
-var confirLowercase;
-var confirUppercase;
+var confirmLength = 0;
+var confirmLowercase;
+var confirmUppercase;
 var confirmNumeric;
 var confirmSpecial;
 
@@ -11,27 +11,26 @@ var confirmSpecial;
 //Var Arrays
 var Uppercase= ["A,B,C,D,E,F,G,H,I,J,K,L,M,N,O.P,Q,R,S,T,U,V,W,X,Y,Z,"];
 var Lowercase = ["a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"];
-var number = ["0,1,2,3,4,5,6,7,8,9"];
+var numeric = ["0,1,2,3,4,5,6,7,8,9"];
 var special = ["!,@,#,$,%,^,&,*,(,),_,+"];
 
 //Prompt that confirms user is inside the parameters
 function generatePassword() {
-    var confirmLength=("You must chose between 8 and 128 characters")
+    confirmLength=(prompt("You must chose between 8 and 128 characters");
     //Loop if password length is outside of parameters
-    var confirmlength= (prompt("Enter the length of the password (8-128 characters):"));
     if (isNaN(confirmLength) || confirmLength <8 || confirmLength > 128) {
       alert ("Please enter a valid password length between 8 and 128 characters.");
-      var confirmLength = (prompt("Enter the length of the password between 8 and 128 characters."));
+      confirmLength = (prompt("Enter the length of the password between 8 and 128 characters."));
   
     }
     // Returm how many charactes the user will have  
     alert(`Your password will have ${confirmLength} characters`);
 
     //Password parameters
-    var confirmLowercase = confirm("Click ok to confirm if you would like to include lowercase characters");
-    var confirmUppercase = confirm("Click 'ok' to confirm if you would like to include Uppercase characters");    
-    var confirmSpecial = confirm("Click 'ok' to confirm if you would like to include special characters");
-    var confirmNumeric = confirm("Click 'ok' to confirm if you would like to include numeric characters");
+    confirmLowercase = confirm("Click ok to confirm if you would like to include lowercase characters");
+    confirmUppercase = confirm("Click 'ok' to confirm if you would like to include uppercase characters");    
+    confirmSpecial = confirm("Click 'ok' to confirm if you would like to include special characters");
+    confirmNumeric = confirm("Click 'ok' to confirm if you would like to include numeric characters");
 
       // Loop if password is outside of criteria
       
@@ -39,10 +38,10 @@ function generatePassword() {
  while(confirmLowercase === false && confirmUppercase === false && confirmNumeric === false && confirmSpecial === false) {
         alert("You must use one of the parameters");
        confirmLowercase = confirm("Click ok to confirm if you would like to include lowercase characters");
-       confirmUppercase = confirm("Click 'ok' to confirm if you would like to include Uppercase characters");    
+       confirmUppercase = confirm("Click 'ok' to confirm if you would like to include uppercase characters");    
        confirmSpecial = confirm("Click 'ok' to confirm if you would like to include special characters");
        confirmNumeric = confirm("Click 'ok' to confirm if you would like to include numeric characters");
-
+ }
     
        // Assign fix this password to the parameters
        
@@ -53,15 +52,15 @@ function generatePassword() {
        }
    
        if (confirmNumeric) {
-         password = password.concat(number)
+         password = password.concat(numeric)
        }
          
        if (confirmLowercase) {
-         password = password.concat(Lower)
+         password = password.concat(Lowercase)
        }
    
        if (confirmUppercase) {
-         password = password.concat(Upper)
+         password = password.concat(Uppercase)
        }
    
          console.log(password)
@@ -75,8 +74,9 @@ function generatePassword() {
         // return randomPassword;
         return hello;
 
+
         }
-         
+
         // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
