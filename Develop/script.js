@@ -9,14 +9,14 @@ var confirmSpecial;
 
 
 //Var Arrays
-var Uppercase= ["A,B,C,D,E,F,G,H,I,J,K,L,M,N,O.P,Q,R,S,T,U,V,W,X,Y,Z,"];
-var Lowercase = ["a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"];
-var numeric = ["0,1,2,3,4,5,6,7,8,9"];
-var special = ["!,@,#,$,%,^,&,*,(,),_,+"];
+var Uppercase= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var Lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var numeric = ["0","1","2","3","4","5","6","7","8","9"];
+var special = ["!","@","#","$","%","^","&","*","(",")","_","+"];
 
 //Prompt that confirms user is inside the parameters
 function generatePassword() {
-    confirmLength=(prompt("You must chose between 8 and 128 characters"));
+   confirmLength=(prompt("You must chose between 8 and 128 characters"));
     //Loop if password length is outside of parameters
     if (isNaN(confirmLength) || confirmLength <8 || confirmLength > 128) {
       alert ("Please enter a valid password length between 8 and 128 characters.");
@@ -62,7 +62,7 @@ function generatePassword() {
        if (confirmUppercase) {
          password = password.concat(Uppercase)
        }
-   
+   debugger;
          console.log(password)
          
          var randomPassword = ""
